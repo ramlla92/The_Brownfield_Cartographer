@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+wheels/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# uv
+.uv/
+uv.lock
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.coveragerc
+
+# Type checking
+.mypy_cache/
+
+# Ruff / linting cache
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Cartographer outputs (committed selectively)
+.cartography/
+!.cartography/.gitkeep
+
+# Vector store / embeddings cache
+semantic_index/
+*.chroma/
+chroma.sqlite3
+
+# Downloaded repos (temp clones)
+_repos/
+tmp_clones/
+
+# Logs
+*.log
+logs/
+cartography_trace.jsonl
+
+# OS
+Thumbs.db
