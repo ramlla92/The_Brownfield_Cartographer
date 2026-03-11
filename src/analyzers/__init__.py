@@ -1,15 +1,19 @@
 """src/analyzers package — LanguageRouter + AST analyzers."""
 
-from .tree_sitter_analyzer import analyze_module, detect_language, EXTENSION_MAP
-from .sql_lineage import extract_sql_lineage
-from .dag_config_parser import parse_config_file, parse_dbt_schema, parse_airflow_dag
+from .tree_sitter_analyzer import analyze_module, LanguageRouter, TreeSitterAnalyzer
+from .git_velocity import extract_git_velocity
+from .sql_lineage import extract_sql_lineage, SQLLineageAnalyzer
+from .dag_config_parser import parse_config_file, DAGConfigAnalyzer
+from .python_dataflow import PythonDataFlowAnalyzer
 
 __all__ = [
     "analyze_module",
-    "detect_language",
-    "EXTENSION_MAP",
+    "LanguageRouter",
+    "TreeSitterAnalyzer",
+    "extract_git_velocity",
     "extract_sql_lineage",
+    "SQLLineageAnalyzer",
     "parse_config_file",
-    "parse_dbt_schema",
-    "parse_airflow_dag",
+    "DAGConfigAnalyzer",
+    "PythonDataFlowAnalyzer",
 ]

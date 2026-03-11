@@ -30,17 +30,25 @@ class ModuleNode(BaseModel):
     """Represents a source file / module in the codebase."""
 
     path: str = Field(..., description="Relative path from repo root")
-    language: Language = Language.UNKNOWN
+    language: str = "unknown"
+    imports: list[str] = Field(default_factory=list)
+    public_functions: list[str] = Field(default_factory=list)
+    classes: list[str] = Field(default_factory=list)
+    bases: dict[str, list[str]] = Field(default_factory=dict)
+    change_velocity_30d: Optional[int] = None
+    page_rank: Optional[float] = None
+    scc_id: Optional[int] = None
+    is_dead_code_candidate: bool = False
+    is_high_velocity_core: bool = False
+    is_architectural_hub: bool = False
+    last_modified: Optional[datetime] = None
+    
+    # Extra fields from brief/original scaffold if needed for later phases
     purpose_statement: Optional[str] = None
     domain_cluster: Optional[str] = None
     complexity_score: float = 0.0
-    change_velocity_30d: int = 0
-    is_dead_code_candidate: bool = False
-    last_modified: Optional[datetime] = None
     lines_of_code: int = 0
     comment_ratio: float = 0.0
-    imports: list[str] = Field(default_factory=list)
-    exports: list[str] = Field(default_factory=list)
     docstring_drift_flag: bool = False
 
 
