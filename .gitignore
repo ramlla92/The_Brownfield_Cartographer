@@ -50,9 +50,7 @@ coverage.xml
 .ipynb_checkpoints/
 *.ipynb
 
-# Cartographer outputs (committed selectively)
-.cartography/
-!.cartography/.gitkeep
+
 
 # Vector store / embeddings cache
 semantic_index/
