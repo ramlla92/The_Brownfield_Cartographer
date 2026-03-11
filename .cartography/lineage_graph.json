@@ -1,0 +1,602 @@
+{
+  "datasets": {
+    "stg_customers": {
+      "name": "stg_customers",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "stg_locations": {
+      "name": "stg_locations",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "stg_orders": {
+      "name": "stg_orders",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "stg_order_items": {
+      "name": "stg_order_items",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "stg_products": {
+      "name": "stg_products",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "stg_supplies": {
+      "name": "stg_supplies",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "ecom.raw_customers": {
+      "name": "ecom.raw_customers",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "ecom.raw_stores": {
+      "name": "ecom.raw_stores",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "ecom.raw_orders": {
+      "name": "ecom.raw_orders",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "ecom.raw_items": {
+      "name": "ecom.raw_items",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "ecom.raw_products": {
+      "name": "ecom.raw_products",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "ecom.raw_supplies": {
+      "name": "ecom.raw_supplies",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "dynamic_reference": {
+      "name": "dynamic_reference",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "def run():\\n    pass": {
+      "name": "def run():\\n    pass",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "import os\\n\\ndef my_func():\\n    pass\\n\\nclass MyClass(Base):\\n    pass": {
+      "name": "import os\\n\\ndef my_func():\\n    pass\\n\\nclass MyClass(Base):\\n    pass",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "\nCREATE TABLE analytics.revenue AS SELECT * FROM raw.payments\n": {
+      "name": "\nCREATE TABLE analytics.revenue AS SELECT * FROM raw.payments\n",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "\nextract >> transform >> load\n": {
+      "name": "\nextract >> transform >> load\n",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "\nimport pandas as pd\ndf = pd.read_sql(\"SELECT * FROM analytics.revenue\", con=None)\ndf.to_csv(\"s3://bucket/export.csv\")\n": {
+      "name": "\nimport pandas as pd\ndf = pd.read_sql(\"SELECT * FROM analytics.revenue\", con=None)\ndf.to_csv(\"s3://bucket/export.csv\")\n",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "# hello": {
+      "name": "# hello",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "class User: pass": {
+      "name": "class User: pass",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "config": {
+      "name": "config",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "def helper(): pass": {
+      "name": "def helper(): pass",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "from .user import User": {
+      "name": "from .user import User",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    },
+    "import utils\\nimport models.user\\n\\ndef main(): pass": {
+      "name": "import utils\\nimport models.user\\n\\ndef main(): pass",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false
+    }
+  },
+  "transformations": {
+    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\customers.sql": {
+      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\customers.sql",
+      "source_datasets": [
+        "stg_customers"
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\customers.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "with\n\ncustomers as (\n\n    select * from {{ ref('stg_customers') }}\n\n),\n\norders as (\n\n    select * from {{ ref('orders') }}\n\n),\n\ncustomer_orders_summary as (\n\n    select\n        orders.customer_id,\n\n        count(distinct orders.order_id) as count_lifetime_orders,\n        count(distinct orders.order_id) > 1 as is_repeat_buyer,\n        min(orders.ordered_at) as first_ordered_at,\n        max(orders.ordered_at) as last_ordered_at,\n        sum(orders.subtotal) as lifetime_spend_pretax,\n        sum(orders.tax_paid) as lifetime_tax_paid,\n        sum(orders.order_total) as lifetime_spend\n\n    from orders\n\n    group by 1\n\n),\n\njoined as (\n\n    select\n        customers.*,\n\n        customer_orders_summary.count_lifetime_orders,\n        customer_orders_summary.first_ordered_at,\n        customer_orders_summary.last_ordered_at,\n        customer_orders_summary.lifetime_spend_pretax,\n        customer_orders_summary.lifetime_tax_paid,\n        customer_orders_summary.lifetime_spend,\n\n        case\n            when customer_orders_summary.is_repeat_buyer then 'returning'\n            else 'new'\n        end as customer_type\n\n    from customers\n\n    left join customer_orders_summary\n        on customers.customer_id = customer_orders_summary.customer_id\n\n)\n\nselect * from joined\n"
+    },
+    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\locations.sql": {
+      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\locations.sql",
+      "source_datasets": [
+        "stg_locations"
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\locations.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "with\n\nlocations as (\n\n    select * from {{ ref('stg_locations') }}\n\n)\n\nselect * from locations\n"
+    },
+    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\orders.sql": {
+      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\orders.sql",
+      "source_datasets": [
+        "stg_orders"
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\orders.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "with\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\norder_items as (\n\n    select * from {{ ref('order_items') }}\n\n),\n\norder_items_summary as (\n\n    select\n        order_id,\n\n        sum(supply_cost) as order_cost,\n        sum(product_price) as order_items_subtotal,\n        count(order_item_id) as count_order_items,\n        sum(\n            case\n                when is_food_item then 1\n                else 0\n            end\n        ) as count_food_items,\n        sum(\n            case\n                when is_drink_item then 1\n                else 0\n            end\n        ) as count_drink_items\n\n    from order_items\n\n    group by 1\n\n),\n\ncompute_booleans as (\n\n    select\n        orders.*,\n\n        order_items_summary.order_cost,\n        order_items_summary.order_items_subtotal,\n        order_items_summary.count_food_items,\n        order_items_summary.count_drink_items,\n        order_items_summary.count_order_items,\n        order_items_summary.count_food_items > 0 as is_food_order,\n        order_items_summary.count_drink_items > 0 as is_drink_order\n\n    from orders\n\n    left join\n        order_items_summary\n        on orders.order_id = order_items_summary.order_id\n\n),\n\ncustomer_order_count as (\n\n    select\n        *,\n\n        row_number() over (\n            partition by customer_id\n            order by ordered_at asc\n        ) as customer_order_number\n\n    from compute_booleans\n\n)\n\nselect * from customer_order_count\n"
+    },
+    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql": {
+      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql",
+      "source_datasets": [
+        "stg_order_items",
+        "stg_orders",
+        "stg_products",
+        "stg_supplies"
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "with\n\norder_items as (\n\n    select * from {{ ref('stg_order_items') }}\n\n),\n\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\nproducts as (\n\n    select * from {{ ref('stg_products') }}\n\n),\n\nsupplies as (\n\n    select * from {{ ref('stg_supplies') }}\n\n),\n\norder_supplies_summary as (\n\n    select\n        product_id,\n\n        sum(supply_cost) as supply_cost\n\n    from supplies\n\n    group by 1\n\n),\n\njoined as (\n\n    select\n        order_items.*,\n\n        orders.ordered_at,\n\n        products.product_name,\n        products.product_price,\n        products.is_food_item,\n        products.is_drink_item,\n\n        order_supplies_summary.supply_cost\n\n    from order_items\n\n    left join orders on order_items.order_id = orders.order_id\n\n    left join products on order_items.product_id = products.product_id\n\n    left join order_supplies_summary\n        on order_items.product_id = order_supplies_summary.product_id\n\n)\n\nselect * from joined\n"
+    },
+    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\products.sql": {
+      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\products.sql",
+      "source_datasets": [
+        "stg_products"
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\products.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "with\n\nproducts as (\n\n    select * from {{ ref('stg_products') }}\n\n)\n\nselect * from products\n"
+    },
+    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\supplies.sql": {
+      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\supplies.sql",
+      "source_datasets": [
+        "stg_supplies"
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\supplies.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "with\n\nsupplies as (\n\n    select * from {{ ref('stg_supplies') }}\n\n)\n\nselect * from supplies\n"
+    },
+    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_customers.sql": {
+      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_customers.sql",
+      "source_datasets": [
+        "ecom.raw_customers"
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_customers.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_customers') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as customer_id,\n\n        ---------- text\n        name as customer_name\n\n    from source\n\n)\n\nselect * from renamed\n"
+    },
+    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_locations.sql": {
+      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_locations.sql",
+      "source_datasets": [
+        "ecom.raw_stores"
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_locations.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_stores') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as location_id,\n\n        ---------- text\n        name as location_name,\n\n        ---------- numerics\n        tax_rate,\n\n        ---------- timestamps\n        {{ dbt.date_trunc('day', 'opened_at') }} as opened_date\n\n    from source\n\n)\n\nselect * from renamed\n"
+    },
+    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_orders.sql": {
+      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_orders.sql",
+      "source_datasets": [
+        "ecom.raw_orders"
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_orders.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_orders') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as order_id,\n        store_id as location_id,\n        customer as customer_id,\n\n        ---------- numerics\n        subtotal as subtotal_cents,\n        tax_paid as tax_paid_cents,\n        order_total as order_total_cents,\n        {{ cents_to_dollars('subtotal') }} as subtotal,\n        {{ cents_to_dollars('tax_paid') }} as tax_paid,\n        {{ cents_to_dollars('order_total') }} as order_total,\n\n        ---------- timestamps\n        {{ dbt.date_trunc('day','ordered_at') }} as ordered_at\n\n    from source\n\n)\n\nselect * from renamed\n"
+    },
+    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_order_items.sql": {
+      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_order_items.sql",
+      "source_datasets": [
+        "ecom.raw_items"
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_order_items.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_items') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as order_item_id,\n        order_id,\n        sku as product_id\n\n    from source\n\n)\n\nselect * from renamed\n"
+    },
+    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_products.sql": {
+      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_products.sql",
+      "source_datasets": [
+        "ecom.raw_products"
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_products.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_products') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        sku as product_id,\n\n        ---------- text\n        name as product_name,\n        type as product_type,\n        description as product_description,\n\n\n        ---------- numerics\n        {{ cents_to_dollars('price') }} as product_price,\n\n        ---------- booleans\n        coalesce(type = 'jaffle', false) as is_food_item,\n\n        coalesce(type = 'beverage', false) as is_drink_item\n\n    from source\n\n)\n\nselect * from renamed\n"
+    },
+    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_supplies.sql": {
+      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_supplies.sql",
+      "source_datasets": [
+        "ecom.raw_supplies"
+      ],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_supplies.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_supplies') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        {{ dbt_utils.generate_surrogate_key(['id', 'sku']) }} as supply_uuid,\n        id as supply_id,\n        sku as product_id,\n\n        ---------- text\n        name as supply_name,\n\n        ---------- numerics\n        {{ cents_to_dollars('cost') }} as supply_cost,\n\n        ---------- booleans\n        perishable as is_perishable_supply\n\n    from source\n\n)\n\nselect * from renamed\n"
+    },
+    "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\orchestrator.py": {
+      "id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\orchestrator.py",
+      "source_datasets": [],
+      "target_datasets": [
+        "dynamic_reference"
+      ],
+      "transformation_type": "python_dataflow",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\orchestrator.py",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null
+    },
+    "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\agents\\archivist.py": {
+      "id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\agents\\archivist.py",
+      "source_datasets": [],
+      "target_datasets": [
+        "dynamic_reference"
+      ],
+      "transformation_type": "python_dataflow",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\agents\\archivist.py",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null
+    },
+    "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_analyzers.py": {
+      "id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_analyzers.py",
+      "source_datasets": [],
+      "target_datasets": [
+        "def run():\\n    pass",
+        "import os\\n\\ndef my_func():\\n    pass\\n\\nclass MyClass(Base):\\n    pass"
+      ],
+      "transformation_type": "python_dataflow",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_analyzers.py",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null
+    },
+    "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py": {
+      "id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py",
+      "source_datasets": [],
+      "target_datasets": [
+        "\nCREATE TABLE analytics.revenue AS SELECT * FROM raw.payments\n",
+        "\nextract >> transform >> load\n",
+        "\nimport pandas as pd\ndf = pd.read_sql(\"SELECT * FROM analytics.revenue\", con=None)\ndf.to_csv(\"s3://bucket/export.csv\")\n",
+        "dynamic_reference"
+      ],
+      "transformation_type": "python_dataflow",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null
+    },
+    "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py": {
+      "id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
+      "source_datasets": [],
+      "target_datasets": [
+        "# hello",
+        "class User: pass",
+        "config",
+        "def helper(): pass",
+        "dynamic_reference",
+        "from .user import User",
+        "import utils\\nimport models.user\\n\\ndef main(): pass"
+      ],
+      "transformation_type": "python_dataflow",
+      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null
+    }
+  },
+  "produces_edges": [
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\orchestrator.py",
+      "dataset_name": "dynamic_reference"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\agents\\archivist.py",
+      "dataset_name": "dynamic_reference"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_analyzers.py",
+      "dataset_name": "def run():\\n    pass"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_analyzers.py",
+      "dataset_name": "import os\\n\\ndef my_func():\\n    pass\\n\\nclass MyClass(Base):\\n    pass"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py",
+      "dataset_name": "\nCREATE TABLE analytics.revenue AS SELECT * FROM raw.payments\n"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py",
+      "dataset_name": "\nextract >> transform >> load\n"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py",
+      "dataset_name": "\nimport pandas as pd\ndf = pd.read_sql(\"SELECT * FROM analytics.revenue\", con=None)\ndf.to_csv(\"s3://bucket/export.csv\")\n"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py",
+      "dataset_name": "dynamic_reference"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
+      "dataset_name": "# hello"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
+      "dataset_name": "class User: pass"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
+      "dataset_name": "config"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
+      "dataset_name": "def helper(): pass"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
+      "dataset_name": "dynamic_reference"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
+      "dataset_name": "from .user import User"
+    },
+    {
+      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
+      "dataset_name": "import utils\\nimport models.user\\n\\ndef main(): pass"
+    }
+  ],
+  "consumes_edges": [
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\customers.sql",
+      "dataset_name": "stg_customers"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\locations.sql",
+      "dataset_name": "stg_locations"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\orders.sql",
+      "dataset_name": "stg_orders"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql",
+      "dataset_name": "stg_order_items"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql",
+      "dataset_name": "stg_orders"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql",
+      "dataset_name": "stg_products"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql",
+      "dataset_name": "stg_supplies"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\products.sql",
+      "dataset_name": "stg_products"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\supplies.sql",
+      "dataset_name": "stg_supplies"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_customers.sql",
+      "dataset_name": "ecom.raw_customers"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_locations.sql",
+      "dataset_name": "ecom.raw_stores"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_orders.sql",
+      "dataset_name": "ecom.raw_orders"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_order_items.sql",
+      "dataset_name": "ecom.raw_items"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_products.sql",
+      "dataset_name": "ecom.raw_products"
+    },
+    {
+      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_supplies.sql",
+      "dataset_name": "ecom.raw_supplies"
+    }
+  ],
+  "configures_edges": [],
+  "source_datasets": [
+    "stg_customers",
+    "stg_locations",
+    "stg_orders",
+    "stg_order_items",
+    "stg_products",
+    "stg_supplies",
+    "ecom.raw_customers",
+    "ecom.raw_stores",
+    "ecom.raw_orders",
+    "ecom.raw_items",
+    "ecom.raw_products",
+    "ecom.raw_supplies"
+  ],
+  "sink_datasets": [
+    "dynamic_reference",
+    "def run():\\n    pass",
+    "import os\\n\\ndef my_func():\\n    pass\\n\\nclass MyClass(Base):\\n    pass",
+    "\nCREATE TABLE analytics.revenue AS SELECT * FROM raw.payments\n",
+    "\nextract >> transform >> load\n",
+    "\nimport pandas as pd\ndf = pd.read_sql(\"SELECT * FROM analytics.revenue\", con=None)\ndf.to_csv(\"s3://bucket/export.csv\")\n",
+    "# hello",
+    "class User: pass",
+    "config",
+    "def helper(): pass",
+    "from .user import User",
+    "import utils\\nimport models.user\\n\\ndef main(): pass"
+  ]
+}
