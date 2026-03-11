@@ -19,6 +19,44 @@ from src.graph.knowledge_graph import KnowledgeGraph
 from src.models.graph import CartographyResult
 
 
+def run_analyze(repo_root: Path) -> None:
+    """
+    Run Phase 1 (Surveyor) on repo_root and write .cartography/module_graph.json.
+    """
+    repo_root = repo_root.resolve()
+    cartography_dir = repo_root / ".cartography"
+    cartography_dir.mkdir(parents=True, exist_ok=True)
+
+    logger.info(f"[Orchestrator] Running Surveyor analysis on: {repo_root}")
+    
+    surveyor = Surveyor(repo_root=repo_root)
+    surveyor.build_module_graph()
+    
+    output_path = cartography_dir / "module_graph.json"
+    surveyor.write_module_graph_json(output_path)
+    logger.info(f"[Orchestrator] Saved module graph to {output_path}")
+
+
+def run_lineage(repo_root: Path) -> None:
+    """
+    Run Phase 2 (Hydrologist) on repo_root and write .cartography/lineage_graph.json.
+    """
+    repo_root = repo_root.resolve()
+    cartography_dir = repo_root / ".cartography"
+    cartography_dir.mkdir(parents=True, exist_ok=True)
+
+    logger.info(f"[Orchestrator] Running Hydrologist analysis on: {repo_root}")
+
+    hydrologist = Hydrologist(repo_root=repo_root)
+    lineage_graph = hydrologist.run()
+
+    output_path = cartography_dir / "lineage_graph.json"
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(lineage_graph.model_dump_json(indent=2))
+    
+    logger.info(f"[Orchestrator] Saved data lineage to {output_path}")
+
+
 def run_full_pipeline(
     repo_path: Path,
     output_dir: Path,
@@ -44,7 +82,21 @@ def run_full_pipeline(
     # 1. Surveyor
     logger.info("[Orchestrator] Phase 1: Surveyor")
     surveyor = Surveyor(repo_root=repo_path)
-    module_graph = surveyor.run()
+    # The current orchestrator expects surveyor.run() but Surveyor has build_module_graph()
+    # Let's fix it to use build_module_graph() and then convert to our model if needed.
+    # However, for now, let's keep it consistent with what run_full_pipeline expects 
+    # if there was a separate 'run' method, but since there isn't, we adapt.
+    nx_graph = surveyor.build_module_graph()
+    
+    # We need to map nx.DiGraph to our ModuleGraph model. 
+    # Since I don't see a helper for that yet, and run_full_pipeline 
+    # likely expected a return value of type ModuleGraph from surveyor.run().
+    from src.models.graph import ModuleGraph
+    # We can reconstruct it from the graph nodes/edges
+    modules = {}
+    for node_id, attrs in nx_graph.nodes(data=True):
+        modules[node_id] = ModuleNode(**attrs)
+    module_graph = ModuleGraph(modules=modules)
 
     # 2. Hydrologist
     logger.info("[Orchestrator] Phase 2: Hydrologist")

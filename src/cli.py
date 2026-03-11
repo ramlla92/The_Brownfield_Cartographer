@@ -26,7 +26,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.progress import track
 
-from src.orchestrator import run_full_pipeline
+from src.orchestrator import run_full_pipeline, run_analyze, run_lineage
 from src.models.graph import CartographyResult
 
 app = typer.Typer(
@@ -60,26 +60,9 @@ def _resolve_repo(repo: str, clone_dir: Path = Path("_repos")) -> Path:
 # ─── analyze subcommand ───────────────────────────────────────────────────────
 
 @app.command()
-def analyze(
-    repo: str = typer.Argument(..., help="Local path or GitHub URL to analyse"),
-    output: Optional[Path] = typer.Option(
-        None, "--output", "-o",
-        help="Output directory for cartography artifacts (default: <repo>/.cartography)",
-    ),
-    no_llm: bool = typer.Option(
-        False, "--no-llm",
-        help="Skip Semanticist (no LLM calls — faster, cheaper, no API key required)",
-    ),
-    incremental: bool = typer.Option(
-        False, "--incremental",
-        help="Only re-analyse files changed since last run (uses git diff)",
-    ),
-):
+def analyze(repo: str = typer.Argument(".", help="Local path or GitHub URL to analyse")):
     """
-    Run the full Brownfield Cartographer analysis pipeline.
-
-    Runs: Surveyor → Hydrologist → [Semanticist] → Archivist
-    Outputs: CODEBASE.md, onboarding_brief.md, module_graph.json, lineage_graph.json
+    Analyze a repository and produce .cartography/module_graph.json.
     """
     console.print(Panel.fit(
         "[bold cyan]Brownfield Cartographer[/bold cyan] 🗺️\n"
@@ -93,26 +76,16 @@ def analyze(
         console.print(f"[red]Error:[/red] Repository path not found: {repo_path}")
         raise typer.Exit(code=1)
 
-    output_dir = output or (repo_path / ".cartography")
-
     console.print(f"[green]Target:[/green] {repo_path}")
-    console.print(f"[green]Output:[/green] {output_dir}")
-    console.print(f"[green]LLM:[/green] {'disabled (--no-llm)' if no_llm else 'enabled'}")
     console.print()
 
-    result = run_full_pipeline(
-        repo_path=repo_path,
-        output_dir=output_dir,
-        skip_semantics=no_llm,
-    )
+    run_analyze(repo_path)
+    run_lineage(repo_path)
 
     console.print()
     console.print(Panel.fit(
         f"[bold green]✓ Analysis complete![/bold green]\n"
-        f"  Modules analysed:  {len(result.module_graph.modules)}\n"
-        f"  Datasets found:    {len(result.lineage_graph.datasets)}\n"
-        f"  Transformations:   {len(result.lineage_graph.transformations)}\n"
-        f"  Artifacts written: {output_dir}",
+        f"  Artifacts written: {repo_path / '.cartography'}",
         border_style="green",
     ))
 
