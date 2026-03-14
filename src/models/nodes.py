@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import datetime
 from enum import Enum
-from typing import Optional
+from typing import Optional, Any
 
 from pydantic import BaseModel, Field
 
@@ -30,7 +30,10 @@ class ModuleNode(BaseModel):
     """Represents a source file / module in the codebase."""
 
     path: str = Field(..., description="Relative path from repo root")
-    language: str = "unknown"
+    language: Language = Language.UNKNOWN
+    analysis_method: Optional[str] = None  # tree_sitter | heuristic | llm
+    module_type: Optional[str] = None  # pipeline | ingestion | transformation | api | config | test | utility
+    is_entrypoint: bool = False
     imports: list[str] = Field(default_factory=list)
     public_functions: list[str] = Field(default_factory=list)
     classes: list[str] = Field(default_factory=list)
@@ -51,16 +54,31 @@ class ModuleNode(BaseModel):
     comment_ratio: float = 0.0
     docstring_drift_flag: bool = False
 
+    # Phase 4 Enhancements
+    import_count: int = 0
+    dependent_modules: int = 0
+    confidence: float = 1.0
+    deep_audit_required: bool = False
+
 
 class DatasetNode(BaseModel):
     """Represents a data source, sink, or intermediate dataset."""
 
     name: str = Field(..., description="Table name, file path, or stream topic")
+    namespace: str = Field("default", description="Environment namespace, e.g. snowflake.prod.raw")
     storage_type: StorageType = StorageType.TABLE
     schema_snapshot: Optional[dict] = None
     freshness_sla: Optional[str] = None
     owner: Optional[str] = None
     is_source_of_truth: bool = False
+
+    # Phase 4 Enhancements
+    location: Optional[str] = None
+    dataset_role: Optional[str] = None  # source | staging | intermediate | mart | feature | output
+    upstream_count: int = 0
+    downstream_count: int = 0
+    analysis_method: Optional[str] = None
+    confidence: float = 1.0
 
 
 class FunctionNode(BaseModel):
@@ -74,15 +92,34 @@ class FunctionNode(BaseModel):
     is_public_api: bool = False
     start_line: int = 0
     end_line: int = 0
+    docstring_drift_flag: bool = False
+
+    # Phase 4 Enhancements
+    decorators: list[str] = Field(default_factory=list)
+    cyclomatic_complexity: Optional[int] = None
+    analysis_method: Optional[str] = None
+    confidence: float = 1.0
 
 
 class TransformationNode(BaseModel):
     """Represents a data transformation step."""
-
+    name: Optional[str] = None
     id: str = Field(..., description="Unique identifier")
+    framework: Optional[str] = None  # pandas | spark | dbt | airflow | sql | duckdb
     source_datasets: list[str] = Field(default_factory=list)
     target_datasets: list[str] = Field(default_factory=list)
     transformation_type: str = "unknown"  # e.g. pandas, spark, dbt, sql, airflow
     source_file: str = ""
     line_range: tuple[int, int] = (0, 0)
     sql_query_if_applicable: Optional[str] = None
+    metadata: dict[str, Any] = Field(default_factory=dict)
+    confidence_score: float = 1.0
+
+    # Lineage Flags
+    dynamic_reference: bool = False
+    requires_runtime_context: bool = False
+    via_sql: bool = False
+
+    # Phase 4 Enhancements
+    confidence: float = 1.0
+    analysis_method: Optional[str] = None

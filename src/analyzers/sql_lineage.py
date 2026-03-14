@@ -97,20 +97,6 @@ class SQLLineageAnalyzer:
                         if t_name in sources:
                             sources.remove(t_name)
 
-        return sources, targets
-
-        if not sources and not targets:
-            return None
-
-        return TransformationNode(
-            id=f"sql::{sql_path}",
-            source_datasets=sorted(list(sources)),
-            target_datasets=sorted(list(targets)),
-            transformation_type="sql",
-            source_file=str(sql_path),
-            sql_query_if_applicable=source[:2000],
-        )
-
 
 def _qualified_name(table: exp.Table) -> Optional[str]:
     """Convert a sqlglot Table expression to a dotted string name."""

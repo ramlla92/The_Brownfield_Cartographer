@@ -1,8 +1,15 @@
-"""Pydantic schema models — Edge types for the knowledge graph."""
-
-from __future__ import annotations
+from enum import Enum
+from typing import Optional
 
 from pydantic import BaseModel, Field
+
+
+class EdgeType(str, Enum):
+    IMPORTS = "IMPORTS"
+    PRODUCES = "PRODUCES"
+    CONSUMES = "CONSUMES"
+    CALLS = "CALLS"
+    CONFIGURES = "CONFIGURES"
 
 
 class ImportEdge(BaseModel):
@@ -11,6 +18,11 @@ class ImportEdge(BaseModel):
     source: str
     target: str
     import_count: int = 1
+    
+    # Traceability
+    source_file: Optional[str] = None
+    line_range: Optional[tuple[int, int]] = None
+    confidence: float = 1.0
 
 
 class ProducesEdge(BaseModel):
@@ -18,6 +30,11 @@ class ProducesEdge(BaseModel):
 
     transformation_id: str
     dataset_name: str
+    
+    # Traceability
+    source_file: Optional[str] = None
+    line_range: Optional[tuple[int, int]] = None
+    confidence: float = 1.0
 
 
 class ConsumesEdge(BaseModel):
@@ -25,6 +42,11 @@ class ConsumesEdge(BaseModel):
 
     transformation_id: str
     dataset_name: str
+    
+    # Traceability
+    source_file: Optional[str] = None
+    line_range: Optional[tuple[int, int]] = None
+    confidence: float = 1.0
 
 
 class CallsEdge(BaseModel):
@@ -33,6 +55,11 @@ class CallsEdge(BaseModel):
     caller: str
     callee: str
     call_count: int = 1
+    
+    # Traceability
+    source_file: Optional[str] = None
+    line_range: Optional[tuple[int, int]] = None
+    confidence: float = 1.0
 
 
 class ConfiguresEdge(BaseModel):
@@ -41,3 +68,20 @@ class ConfiguresEdge(BaseModel):
     config_path: str
     target: str
     config_type: str = "yaml"  # yaml | env | toml
+    
+    # Traceability
+    source_file: Optional[str] = None
+    line_range: Optional[tuple[int, int]] = None
+    confidence: float = 1.0
+
+
+class ImplementsEdge(BaseModel):
+    """code_module/function → transformation (IMPLEMENTS)."""
+
+    source_path: str
+    transformation_id: str
+    
+    # Traceability
+    source_file: Optional[str] = None
+    line_range: Optional[tuple[int, int]] = None
+    confidence: float = 1.0
