@@ -1,602 +1,1322 @@
 {
   "datasets": {
-    "stg_customers": {
-      "name": "stg_customers",
+    "customers": {
+      "name": "customers",
+      "namespace": "default",
       "storage_type": "table",
       "schema_snapshot": null,
       "freshness_sla": null,
       "owner": null,
-      "is_source_of_truth": false
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 2,
+      "downstream_count": 0,
+      "analysis_method": null,
+      "confidence": 0.0
+    },
+    "stg_customers": {
+      "name": "stg_customers",
+      "namespace": "default",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 2,
+      "downstream_count": 1,
+      "analysis_method": null,
+      "confidence": 0.0035
     },
     "stg_locations": {
       "name": "stg_locations",
+      "namespace": "default",
       "storage_type": "table",
       "schema_snapshot": null,
       "freshness_sla": null,
       "owner": null,
-      "is_source_of_truth": false
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 2,
+      "downstream_count": 1,
+      "analysis_method": null,
+      "confidence": 0.0035
+    },
+    "locations": {
+      "name": "locations",
+      "namespace": "default",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 1,
+      "downstream_count": 0,
+      "analysis_method": null,
+      "confidence": 0.0
+    },
+    "orders": {
+      "name": "orders",
+      "namespace": "default",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 2,
+      "downstream_count": 0,
+      "analysis_method": null,
+      "confidence": 0.0
+    },
+    "metricflow_time_spine": {
+      "name": "metricflow_time_spine",
+      "namespace": "default",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 1,
+      "downstream_count": 0,
+      "analysis_method": null,
+      "confidence": 0.0
     },
     "stg_orders": {
       "name": "stg_orders",
+      "namespace": "default",
       "storage_type": "table",
       "schema_snapshot": null,
       "freshness_sla": null,
       "owner": null,
-      "is_source_of_truth": false
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 2,
+      "downstream_count": 2,
+      "analysis_method": null,
+      "confidence": 0.0071
     },
     "stg_order_items": {
       "name": "stg_order_items",
+      "namespace": "default",
       "storage_type": "table",
       "schema_snapshot": null,
       "freshness_sla": null,
       "owner": null,
-      "is_source_of_truth": false
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 2,
+      "downstream_count": 1,
+      "analysis_method": null,
+      "confidence": 0.0035
     },
     "stg_products": {
       "name": "stg_products",
+      "namespace": "default",
       "storage_type": "table",
       "schema_snapshot": null,
       "freshness_sla": null,
       "owner": null,
-      "is_source_of_truth": false
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 2,
+      "downstream_count": 2,
+      "analysis_method": null,
+      "confidence": 0.0071
     },
     "stg_supplies": {
       "name": "stg_supplies",
+      "namespace": "default",
       "storage_type": "table",
       "schema_snapshot": null,
       "freshness_sla": null,
       "owner": null,
-      "is_source_of_truth": false
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 2,
+      "downstream_count": 2,
+      "analysis_method": null,
+      "confidence": 0.0071
+    },
+    "order_items": {
+      "name": "order_items",
+      "namespace": "default",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 2,
+      "downstream_count": 0,
+      "analysis_method": null,
+      "confidence": 0.0
+    },
+    "supplies": {
+      "name": "supplies",
+      "namespace": "default",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 1,
+      "downstream_count": 0,
+      "analysis_method": null,
+      "confidence": 0.0
+    },
+    "products": {
+      "name": "products",
+      "namespace": "default",
+      "storage_type": "table",
+      "schema_snapshot": null,
+      "freshness_sla": null,
+      "owner": null,
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 1,
+      "downstream_count": 0,
+      "analysis_method": null,
+      "confidence": 0.0
     },
     "ecom.raw_customers": {
       "name": "ecom.raw_customers",
+      "namespace": "default",
       "storage_type": "table",
       "schema_snapshot": null,
       "freshness_sla": null,
       "owner": null,
-      "is_source_of_truth": false
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 1,
+      "downstream_count": 1,
+      "analysis_method": null,
+      "confidence": 0.0018
     },
     "ecom.raw_stores": {
       "name": "ecom.raw_stores",
+      "namespace": "default",
       "storage_type": "table",
       "schema_snapshot": null,
       "freshness_sla": null,
       "owner": null,
-      "is_source_of_truth": false
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 1,
+      "downstream_count": 1,
+      "analysis_method": null,
+      "confidence": 0.0018
     },
     "ecom.raw_orders": {
       "name": "ecom.raw_orders",
+      "namespace": "default",
       "storage_type": "table",
       "schema_snapshot": null,
       "freshness_sla": null,
       "owner": null,
-      "is_source_of_truth": false
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 1,
+      "downstream_count": 1,
+      "analysis_method": null,
+      "confidence": 0.0027
     },
     "ecom.raw_items": {
       "name": "ecom.raw_items",
+      "namespace": "default",
       "storage_type": "table",
       "schema_snapshot": null,
       "freshness_sla": null,
       "owner": null,
-      "is_source_of_truth": false
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 1,
+      "downstream_count": 1,
+      "analysis_method": null,
+      "confidence": 0.0018
     },
     "ecom.raw_products": {
       "name": "ecom.raw_products",
+      "namespace": "default",
       "storage_type": "table",
       "schema_snapshot": null,
       "freshness_sla": null,
       "owner": null,
-      "is_source_of_truth": false
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 1,
+      "downstream_count": 1,
+      "analysis_method": null,
+      "confidence": 0.0027
     },
     "ecom.raw_supplies": {
       "name": "ecom.raw_supplies",
+      "namespace": "default",
       "storage_type": "table",
       "schema_snapshot": null,
       "freshness_sla": null,
       "owner": null,
-      "is_source_of_truth": false
-    },
-    "dynamic_reference": {
-      "name": "dynamic_reference",
-      "storage_type": "table",
-      "schema_snapshot": null,
-      "freshness_sla": null,
-      "owner": null,
-      "is_source_of_truth": false
-    },
-    "def run():\\n    pass": {
-      "name": "def run():\\n    pass",
-      "storage_type": "table",
-      "schema_snapshot": null,
-      "freshness_sla": null,
-      "owner": null,
-      "is_source_of_truth": false
-    },
-    "import os\\n\\ndef my_func():\\n    pass\\n\\nclass MyClass(Base):\\n    pass": {
-      "name": "import os\\n\\ndef my_func():\\n    pass\\n\\nclass MyClass(Base):\\n    pass",
-      "storage_type": "table",
-      "schema_snapshot": null,
-      "freshness_sla": null,
-      "owner": null,
-      "is_source_of_truth": false
-    },
-    "\nCREATE TABLE analytics.revenue AS SELECT * FROM raw.payments\n": {
-      "name": "\nCREATE TABLE analytics.revenue AS SELECT * FROM raw.payments\n",
-      "storage_type": "table",
-      "schema_snapshot": null,
-      "freshness_sla": null,
-      "owner": null,
-      "is_source_of_truth": false
-    },
-    "\nextract >> transform >> load\n": {
-      "name": "\nextract >> transform >> load\n",
-      "storage_type": "table",
-      "schema_snapshot": null,
-      "freshness_sla": null,
-      "owner": null,
-      "is_source_of_truth": false
-    },
-    "\nimport pandas as pd\ndf = pd.read_sql(\"SELECT * FROM analytics.revenue\", con=None)\ndf.to_csv(\"s3://bucket/export.csv\")\n": {
-      "name": "\nimport pandas as pd\ndf = pd.read_sql(\"SELECT * FROM analytics.revenue\", con=None)\ndf.to_csv(\"s3://bucket/export.csv\")\n",
-      "storage_type": "table",
-      "schema_snapshot": null,
-      "freshness_sla": null,
-      "owner": null,
-      "is_source_of_truth": false
-    },
-    "# hello": {
-      "name": "# hello",
-      "storage_type": "table",
-      "schema_snapshot": null,
-      "freshness_sla": null,
-      "owner": null,
-      "is_source_of_truth": false
-    },
-    "class User: pass": {
-      "name": "class User: pass",
-      "storage_type": "table",
-      "schema_snapshot": null,
-      "freshness_sla": null,
-      "owner": null,
-      "is_source_of_truth": false
-    },
-    "config": {
-      "name": "config",
-      "storage_type": "table",
-      "schema_snapshot": null,
-      "freshness_sla": null,
-      "owner": null,
-      "is_source_of_truth": false
-    },
-    "def helper(): pass": {
-      "name": "def helper(): pass",
-      "storage_type": "table",
-      "schema_snapshot": null,
-      "freshness_sla": null,
-      "owner": null,
-      "is_source_of_truth": false
-    },
-    "from .user import User": {
-      "name": "from .user import User",
-      "storage_type": "table",
-      "schema_snapshot": null,
-      "freshness_sla": null,
-      "owner": null,
-      "is_source_of_truth": false
-    },
-    "import utils\\nimport models.user\\n\\ndef main(): pass": {
-      "name": "import utils\\nimport models.user\\n\\ndef main(): pass",
-      "storage_type": "table",
-      "schema_snapshot": null,
-      "freshness_sla": null,
-      "owner": null,
-      "is_source_of_truth": false
+      "is_source_of_truth": false,
+      "location": null,
+      "dataset_role": null,
+      "upstream_count": 1,
+      "downstream_count": 1,
+      "analysis_method": null,
+      "confidence": 0.0027
     }
   },
   "transformations": {
-    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\customers.sql": {
-      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\customers.sql",
+    "sql::macros/cents_to_dollars.sql": {
+      "name": null,
+      "id": "sql::macros/cents_to_dollars.sql",
+      "framework": "sql",
+      "source_datasets": [],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "macros/cents_to_dollars.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "{# A basic example for a project-wide macro to cast a column uniformly #}\n\n{% macro cents_to_dollars(column_name) -%}\n    {{ return(adapter.dispatch('cents_to_dollars')(column_name)) }}\n{%- endmacro %}\n\n{% macro default__cents_to_dollars(column_name) -%}\n    ({{ column_name }} / 100)::numeric(16, 2)\n{%- endmacro %}\n\n{% macro postgres__cents_to_dollars(column_name) -%}\n    ({{ column_name }}::numeric(16, 2) / 100)\n{%- endmacro %}\n\n{% macro bigquery__cents_to_dollars(column_name) %}\n    round(cast(({{ column_name }} / 100) as numeric), 2)\n{% endmacro %}\n\n{% macro fabric__cents_to_dollars(column_name) %}\n    cast({{ column_name }} / 100 as numeric(16,2))\n{% endmacro %}\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt::_repos/jaffle-shop/models/marts/customers.yml::customers": {
+      "name": null,
+      "id": "dbt::_repos/jaffle-shop/models/marts/customers.yml::customers",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "customers"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "_repos/jaffle-shop/models/marts/customers.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "sql::macros/generate_schema_name.sql": {
+      "name": null,
+      "id": "sql::macros/generate_schema_name.sql",
+      "framework": "sql",
+      "source_datasets": [],
+      "target_datasets": [],
+      "transformation_type": "sql",
+      "source_file": "macros/generate_schema_name.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "{% macro generate_schema_name(custom_schema_name, node) %}\n\n    {% set default_schema = target.schema %}\n\n    {# seeds go in a global `raw` schema #}\n    {% if node.resource_type == 'seed' %}\n        {{ custom_schema_name | trim }}\n\n    {# non-specified schemas go to the default target schema #}\n    {% elif custom_schema_name is none %}\n        {{ default_schema }}\n\n\n    {# specified custom schema names go to the schema name prepended with the the default schema name in prod (as this is an example project we want the schemas clearly labeled) #}\n    {% elif target.name == 'prod' %}\n        {{ default_schema }}_{{ custom_schema_name | trim }}\n\n    {# specified custom schemas go to the default target schema for non-prod targets #}\n    {% else %}\n        {{ default_schema }}\n    {% endif %}\n\n{% endmacro %}\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt::models/marts/customers.sql": {
+      "name": null,
+      "id": "dbt::models/marts/customers.sql",
+      "framework": "dbt",
       "source_datasets": [
         "stg_customers"
       ],
-      "target_datasets": [],
-      "transformation_type": "sql",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\customers.sql",
+      "target_datasets": [
+        "customers"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "models/marts/customers.sql",
       "line_range": [
         0,
         0
       ],
-      "sql_query_if_applicable": "with\n\ncustomers as (\n\n    select * from {{ ref('stg_customers') }}\n\n),\n\norders as (\n\n    select * from {{ ref('orders') }}\n\n),\n\ncustomer_orders_summary as (\n\n    select\n        orders.customer_id,\n\n        count(distinct orders.order_id) as count_lifetime_orders,\n        count(distinct orders.order_id) > 1 as is_repeat_buyer,\n        min(orders.ordered_at) as first_ordered_at,\n        max(orders.ordered_at) as last_ordered_at,\n        sum(orders.subtotal) as lifetime_spend_pretax,\n        sum(orders.tax_paid) as lifetime_tax_paid,\n        sum(orders.order_total) as lifetime_spend\n\n    from orders\n\n    group by 1\n\n),\n\njoined as (\n\n    select\n        customers.*,\n\n        customer_orders_summary.count_lifetime_orders,\n        customer_orders_summary.first_ordered_at,\n        customer_orders_summary.last_ordered_at,\n        customer_orders_summary.lifetime_spend_pretax,\n        customer_orders_summary.lifetime_tax_paid,\n        customer_orders_summary.lifetime_spend,\n\n        case\n            when customer_orders_summary.is_repeat_buyer then 'returning'\n            else 'new'\n        end as customer_type\n\n    from customers\n\n    left join customer_orders_summary\n        on customers.customer_id = customer_orders_summary.customer_id\n\n)\n\nselect * from joined\n"
+      "sql_query_if_applicable": "with\n\ncustomers as (\n\n    select * from {{ ref('stg_customers') }}\n\n),\n\norders as (\n\n    select * from {{ ref('orders') }}\n\n),\n\ncustomer_orders_summary as (\n\n    select\n        orders.customer_id,\n\n        count(distinct orders.order_id) as count_lifetime_orders,\n        count(distinct orders.order_id) > 1 as is_repeat_buyer,\n        min(orders.ordered_at) as first_ordered_at,\n        max(orders.ordered_at) as last_ordered_at,\n        sum(orders.subtotal) as lifetime_spend_pretax,\n        sum(orders.tax_paid) as lifetime_tax_paid,\n        sum(orders.order_total) as lifetime_spend\n\n    from orders\n\n    group by 1\n\n),\n\njoined as (\n\n    select\n        customers.*,\n\n        customer_orders_summary.count_lifetime_orders,\n        customer_orders_summary.first_ordered_at,\n        customer_orders_summary.last_ordered_at,\n        customer_orders_summary.lifetime_spend_pretax,\n        customer_orders_summary.lifetime_tax_paid,\n        customer_orders_summary.lifetime_spend,\n\n        case\n            when customer_orders_summary.is_repeat_buyer then 'returning'\n            else 'new'\n        end as customer_type\n\n    from customers\n\n    left join customer_orders_summary\n        on customers.customer_id = customer_orders_summary.customer_id\n\n)\n\nselect * from joined\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
     },
-    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\locations.sql": {
-      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\locations.sql",
+    "dbt::models/marts/locations.sql": {
+      "name": null,
+      "id": "dbt::models/marts/locations.sql",
+      "framework": "dbt",
       "source_datasets": [
         "stg_locations"
       ],
-      "target_datasets": [],
-      "transformation_type": "sql",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\locations.sql",
+      "target_datasets": [
+        "locations"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "models/marts/locations.sql",
       "line_range": [
         0,
         0
       ],
-      "sql_query_if_applicable": "with\n\nlocations as (\n\n    select * from {{ ref('stg_locations') }}\n\n)\n\nselect * from locations\n"
+      "sql_query_if_applicable": "with\n\nlocations as (\n\n    select * from {{ ref('stg_locations') }}\n\n)\n\nselect * from locations\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
     },
-    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\orders.sql": {
-      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\orders.sql",
+    "dbt::_repos/jaffle-shop/models/marts/orders.yml::orders": {
+      "name": null,
+      "id": "dbt::_repos/jaffle-shop/models/marts/orders.yml::orders",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "orders"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "_repos/jaffle-shop/models/marts/orders.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt::models/marts/metricflow_time_spine.sql": {
+      "name": null,
+      "id": "dbt::models/marts/metricflow_time_spine.sql",
+      "framework": "dbt",
+      "source_datasets": [],
+      "target_datasets": [
+        "metricflow_time_spine"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "models/marts/metricflow_time_spine.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "-- metricflow_time_spine.sql\nwith\n\ndays as (\n\n    --for BQ adapters use \"DATE('01/01/2000','mm/dd/yyyy')\"\n    {{ dbt_date.get_base_dates(n_dateparts=365*10, datepart=\"day\") }}\n\n),\n\ncast_to_date as (\n\n    select cast(date_day as date) as date_day\n\n    from days\n\n)\n\nselect * from cast_to_date\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt::models/marts/orders.sql": {
+      "name": null,
+      "id": "dbt::models/marts/orders.sql",
+      "framework": "dbt",
       "source_datasets": [
         "stg_orders"
       ],
-      "target_datasets": [],
-      "transformation_type": "sql",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\orders.sql",
+      "target_datasets": [
+        "orders"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "models/marts/orders.sql",
       "line_range": [
         0,
         0
       ],
-      "sql_query_if_applicable": "with\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\norder_items as (\n\n    select * from {{ ref('order_items') }}\n\n),\n\norder_items_summary as (\n\n    select\n        order_id,\n\n        sum(supply_cost) as order_cost,\n        sum(product_price) as order_items_subtotal,\n        count(order_item_id) as count_order_items,\n        sum(\n            case\n                when is_food_item then 1\n                else 0\n            end\n        ) as count_food_items,\n        sum(\n            case\n                when is_drink_item then 1\n                else 0\n            end\n        ) as count_drink_items\n\n    from order_items\n\n    group by 1\n\n),\n\ncompute_booleans as (\n\n    select\n        orders.*,\n\n        order_items_summary.order_cost,\n        order_items_summary.order_items_subtotal,\n        order_items_summary.count_food_items,\n        order_items_summary.count_drink_items,\n        order_items_summary.count_order_items,\n        order_items_summary.count_food_items > 0 as is_food_order,\n        order_items_summary.count_drink_items > 0 as is_drink_order\n\n    from orders\n\n    left join\n        order_items_summary\n        on orders.order_id = order_items_summary.order_id\n\n),\n\ncustomer_order_count as (\n\n    select\n        *,\n\n        row_number() over (\n            partition by customer_id\n            order by ordered_at asc\n        ) as customer_order_number\n\n    from compute_booleans\n\n)\n\nselect * from customer_order_count\n"
+      "sql_query_if_applicable": "with\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\norder_items as (\n\n    select * from {{ ref('order_items') }}\n\n),\n\norder_items_summary as (\n\n    select\n        order_id,\n\n        sum(supply_cost) as order_cost,\n        sum(product_price) as order_items_subtotal,\n        count(order_item_id) as count_order_items,\n        sum(\n            case\n                when is_food_item then 1\n                else 0\n            end\n        ) as count_food_items,\n        sum(\n            case\n                when is_drink_item then 1\n                else 0\n            end\n        ) as count_drink_items\n\n    from order_items\n\n    group by 1\n\n),\n\ncompute_booleans as (\n\n    select\n        orders.*,\n\n        order_items_summary.order_cost,\n        order_items_summary.order_items_subtotal,\n        order_items_summary.count_food_items,\n        order_items_summary.count_drink_items,\n        order_items_summary.count_order_items,\n        order_items_summary.count_food_items > 0 as is_food_order,\n        order_items_summary.count_drink_items > 0 as is_drink_order\n\n    from orders\n\n    left join\n        order_items_summary\n        on orders.order_id = order_items_summary.order_id\n\n),\n\ncustomer_order_count as (\n\n    select\n        *,\n\n        row_number() over (\n            partition by customer_id\n            order by ordered_at asc\n        ) as customer_order_number\n\n    from compute_booleans\n\n)\n\nselect * from customer_order_count\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
     },
-    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql": {
-      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql",
+    "dbt::models/marts/order_items.sql": {
+      "name": null,
+      "id": "dbt::models/marts/order_items.sql",
+      "framework": "dbt",
       "source_datasets": [
         "stg_order_items",
         "stg_orders",
         "stg_products",
         "stg_supplies"
       ],
-      "target_datasets": [],
-      "transformation_type": "sql",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql",
+      "target_datasets": [
+        "order_items"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "models/marts/order_items.sql",
       "line_range": [
         0,
         0
       ],
-      "sql_query_if_applicable": "with\n\norder_items as (\n\n    select * from {{ ref('stg_order_items') }}\n\n),\n\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\nproducts as (\n\n    select * from {{ ref('stg_products') }}\n\n),\n\nsupplies as (\n\n    select * from {{ ref('stg_supplies') }}\n\n),\n\norder_supplies_summary as (\n\n    select\n        product_id,\n\n        sum(supply_cost) as supply_cost\n\n    from supplies\n\n    group by 1\n\n),\n\njoined as (\n\n    select\n        order_items.*,\n\n        orders.ordered_at,\n\n        products.product_name,\n        products.product_price,\n        products.is_food_item,\n        products.is_drink_item,\n\n        order_supplies_summary.supply_cost\n\n    from order_items\n\n    left join orders on order_items.order_id = orders.order_id\n\n    left join products on order_items.product_id = products.product_id\n\n    left join order_supplies_summary\n        on order_items.product_id = order_supplies_summary.product_id\n\n)\n\nselect * from joined\n"
+      "sql_query_if_applicable": "with\n\norder_items as (\n\n    select * from {{ ref('stg_order_items') }}\n\n),\n\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\nproducts as (\n\n    select * from {{ ref('stg_products') }}\n\n),\n\nsupplies as (\n\n    select * from {{ ref('stg_supplies') }}\n\n),\n\norder_supplies_summary as (\n\n    select\n        product_id,\n\n        sum(supply_cost) as supply_cost\n\n    from supplies\n\n    group by 1\n\n),\n\njoined as (\n\n    select\n        order_items.*,\n\n        orders.ordered_at,\n\n        products.product_name,\n        products.product_price,\n        products.is_food_item,\n        products.is_drink_item,\n\n        order_supplies_summary.supply_cost\n\n    from order_items\n\n    left join orders on order_items.order_id = orders.order_id\n\n    left join products on order_items.product_id = products.product_id\n\n    left join order_supplies_summary\n        on order_items.product_id = order_supplies_summary.product_id\n\n)\n\nselect * from joined\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
     },
-    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\products.sql": {
-      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\products.sql",
-      "source_datasets": [
-        "stg_products"
+    "dbt::_repos/jaffle-shop/models/marts/order_items.yml::order_items": {
+      "name": null,
+      "id": "dbt::_repos/jaffle-shop/models/marts/order_items.yml::order_items",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "order_items"
       ],
-      "target_datasets": [],
-      "transformation_type": "sql",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\products.sql",
+      "transformation_type": "dbt",
+      "source_file": "_repos/jaffle-shop/models/marts/order_items.yml",
       "line_range": [
         0,
         0
       ],
-      "sql_query_if_applicable": "with\n\nproducts as (\n\n    select * from {{ ref('stg_products') }}\n\n)\n\nselect * from products\n"
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
     },
-    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\supplies.sql": {
-      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\supplies.sql",
+    "dbt::models/marts/supplies.sql": {
+      "name": null,
+      "id": "dbt::models/marts/supplies.sql",
+      "framework": "dbt",
       "source_datasets": [
         "stg_supplies"
       ],
-      "target_datasets": [],
-      "transformation_type": "sql",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\supplies.sql",
+      "target_datasets": [
+        "supplies"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "models/marts/supplies.sql",
       "line_range": [
         0,
         0
       ],
-      "sql_query_if_applicable": "with\n\nsupplies as (\n\n    select * from {{ ref('stg_supplies') }}\n\n)\n\nselect * from supplies\n"
+      "sql_query_if_applicable": "with\n\nsupplies as (\n\n    select * from {{ ref('stg_supplies') }}\n\n)\n\nselect * from supplies\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
     },
-    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_customers.sql": {
-      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_customers.sql",
+    "dbt::models/marts/products.sql": {
+      "name": null,
+      "id": "dbt::models/marts/products.sql",
+      "framework": "dbt",
+      "source_datasets": [
+        "stg_products"
+      ],
+      "target_datasets": [
+        "products"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "models/marts/products.sql",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": "with\n\nproducts as (\n\n    select * from {{ ref('stg_products') }}\n\n)\n\nselect * from products\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt::_repos/jaffle-shop/models/staging/stg_customers.yml::stg_customers": {
+      "name": null,
+      "id": "dbt::_repos/jaffle-shop/models/staging/stg_customers.yml::stg_customers",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "stg_customers"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "_repos/jaffle-shop/models/staging/stg_customers.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt::_repos/jaffle-shop/models/staging/stg_locations.yml::stg_locations": {
+      "name": null,
+      "id": "dbt::_repos/jaffle-shop/models/staging/stg_locations.yml::stg_locations",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "stg_locations"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "_repos/jaffle-shop/models/staging/stg_locations.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt::models/staging/stg_customers.sql": {
+      "name": null,
+      "id": "dbt::models/staging/stg_customers.sql",
+      "framework": "dbt",
       "source_datasets": [
         "ecom.raw_customers"
       ],
-      "target_datasets": [],
-      "transformation_type": "sql",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_customers.sql",
+      "target_datasets": [
+        "stg_customers"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "models/staging/stg_customers.sql",
       "line_range": [
         0,
         0
       ],
-      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_customers') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as customer_id,\n\n        ---------- text\n        name as customer_name\n\n    from source\n\n)\n\nselect * from renamed\n"
+      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_customers') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as customer_id,\n\n        ---------- text\n        name as customer_name\n\n    from source\n\n)\n\nselect * from renamed\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
     },
-    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_locations.sql": {
-      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_locations.sql",
+    "dbt::models/staging/stg_locations.sql": {
+      "name": null,
+      "id": "dbt::models/staging/stg_locations.sql",
+      "framework": "dbt",
       "source_datasets": [
         "ecom.raw_stores"
       ],
-      "target_datasets": [],
-      "transformation_type": "sql",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_locations.sql",
+      "target_datasets": [
+        "stg_locations"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "models/staging/stg_locations.sql",
       "line_range": [
         0,
         0
       ],
-      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_stores') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as location_id,\n\n        ---------- text\n        name as location_name,\n\n        ---------- numerics\n        tax_rate,\n\n        ---------- timestamps\n        {{ dbt.date_trunc('day', 'opened_at') }} as opened_date\n\n    from source\n\n)\n\nselect * from renamed\n"
+      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_stores') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as location_id,\n\n        ---------- text\n        name as location_name,\n\n        ---------- numerics\n        tax_rate,\n\n        ---------- timestamps\n        {{ dbt.date_trunc('day', 'opened_at') }} as opened_date\n\n    from source\n\n)\n\nselect * from renamed\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
     },
-    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_orders.sql": {
-      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_orders.sql",
+    "dbt::_repos/jaffle-shop/models/staging/stg_orders.yml::stg_orders": {
+      "name": null,
+      "id": "dbt::_repos/jaffle-shop/models/staging/stg_orders.yml::stg_orders",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "stg_orders"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "_repos/jaffle-shop/models/staging/stg_orders.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt::_repos/jaffle-shop/models/staging/stg_order_items.yml::stg_order_items": {
+      "name": null,
+      "id": "dbt::_repos/jaffle-shop/models/staging/stg_order_items.yml::stg_order_items",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "stg_order_items"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "_repos/jaffle-shop/models/staging/stg_order_items.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt::_repos/jaffle-shop/models/staging/stg_products.yml::stg_products": {
+      "name": null,
+      "id": "dbt::_repos/jaffle-shop/models/staging/stg_products.yml::stg_products",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "stg_products"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "_repos/jaffle-shop/models/staging/stg_products.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt::models/staging/stg_orders.sql": {
+      "name": null,
+      "id": "dbt::models/staging/stg_orders.sql",
+      "framework": "dbt",
       "source_datasets": [
         "ecom.raw_orders"
       ],
-      "target_datasets": [],
-      "transformation_type": "sql",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_orders.sql",
+      "target_datasets": [
+        "stg_orders"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "models/staging/stg_orders.sql",
       "line_range": [
         0,
         0
       ],
-      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_orders') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as order_id,\n        store_id as location_id,\n        customer as customer_id,\n\n        ---------- numerics\n        subtotal as subtotal_cents,\n        tax_paid as tax_paid_cents,\n        order_total as order_total_cents,\n        {{ cents_to_dollars('subtotal') }} as subtotal,\n        {{ cents_to_dollars('tax_paid') }} as tax_paid,\n        {{ cents_to_dollars('order_total') }} as order_total,\n\n        ---------- timestamps\n        {{ dbt.date_trunc('day','ordered_at') }} as ordered_at\n\n    from source\n\n)\n\nselect * from renamed\n"
+      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_orders') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as order_id,\n        store_id as location_id,\n        customer as customer_id,\n\n        ---------- numerics\n        subtotal as subtotal_cents,\n        tax_paid as tax_paid_cents,\n        order_total as order_total_cents,\n        {{ cents_to_dollars('subtotal') }} as subtotal,\n        {{ cents_to_dollars('tax_paid') }} as tax_paid,\n        {{ cents_to_dollars('order_total') }} as order_total,\n\n        ---------- timestamps\n        {{ dbt.date_trunc('day','ordered_at') }} as ordered_at\n\n    from source\n\n)\n\nselect * from renamed\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
     },
-    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_order_items.sql": {
-      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_order_items.sql",
+    "dbt::_repos/jaffle-shop/models/staging/stg_supplies.yml::stg_supplies": {
+      "name": null,
+      "id": "dbt::_repos/jaffle-shop/models/staging/stg_supplies.yml::stg_supplies",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "stg_supplies"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "_repos/jaffle-shop/models/staging/stg_supplies.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_customers": {
+      "name": null,
+      "id": "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_customers",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "ecom.raw_customers"
+      ],
+      "transformation_type": "dbt_source",
+      "source_file": "_repos/jaffle-shop/models/staging/__sources.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_orders": {
+      "name": null,
+      "id": "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_orders",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "ecom.raw_orders"
+      ],
+      "transformation_type": "dbt_source",
+      "source_file": "_repos/jaffle-shop/models/staging/__sources.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_items": {
+      "name": null,
+      "id": "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_items",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "ecom.raw_items"
+      ],
+      "transformation_type": "dbt_source",
+      "source_file": "_repos/jaffle-shop/models/staging/__sources.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_stores": {
+      "name": null,
+      "id": "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_stores",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "ecom.raw_stores"
+      ],
+      "transformation_type": "dbt_source",
+      "source_file": "_repos/jaffle-shop/models/staging/__sources.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_products": {
+      "name": null,
+      "id": "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_products",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "ecom.raw_products"
+      ],
+      "transformation_type": "dbt_source",
+      "source_file": "_repos/jaffle-shop/models/staging/__sources.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_supplies": {
+      "name": null,
+      "id": "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_supplies",
+      "framework": null,
+      "source_datasets": [],
+      "target_datasets": [
+        "ecom.raw_supplies"
+      ],
+      "transformation_type": "dbt_source",
+      "source_file": "_repos/jaffle-shop/models/staging/__sources.yml",
+      "line_range": [
+        0,
+        0
+      ],
+      "sql_query_if_applicable": null,
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
+    },
+    "dbt::models/staging/stg_order_items.sql": {
+      "name": null,
+      "id": "dbt::models/staging/stg_order_items.sql",
+      "framework": "dbt",
       "source_datasets": [
         "ecom.raw_items"
       ],
-      "target_datasets": [],
-      "transformation_type": "sql",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_order_items.sql",
+      "target_datasets": [
+        "stg_order_items"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "models/staging/stg_order_items.sql",
       "line_range": [
         0,
         0
       ],
-      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_items') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as order_item_id,\n        order_id,\n        sku as product_id\n\n    from source\n\n)\n\nselect * from renamed\n"
+      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_items') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as order_item_id,\n        order_id,\n        sku as product_id\n\n    from source\n\n)\n\nselect * from renamed\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
     },
-    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_products.sql": {
-      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_products.sql",
-      "source_datasets": [
-        "ecom.raw_products"
-      ],
-      "target_datasets": [],
-      "transformation_type": "sql",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_products.sql",
-      "line_range": [
-        0,
-        0
-      ],
-      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_products') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        sku as product_id,\n\n        ---------- text\n        name as product_name,\n        type as product_type,\n        description as product_description,\n\n\n        ---------- numerics\n        {{ cents_to_dollars('price') }} as product_price,\n\n        ---------- booleans\n        coalesce(type = 'jaffle', false) as is_food_item,\n\n        coalesce(type = 'beverage', false) as is_drink_item\n\n    from source\n\n)\n\nselect * from renamed\n"
-    },
-    "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_supplies.sql": {
-      "id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_supplies.sql",
+    "dbt::models/staging/stg_supplies.sql": {
+      "name": null,
+      "id": "dbt::models/staging/stg_supplies.sql",
+      "framework": "dbt",
       "source_datasets": [
         "ecom.raw_supplies"
       ],
-      "target_datasets": [],
-      "transformation_type": "sql",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_supplies.sql",
-      "line_range": [
-        0,
-        0
-      ],
-      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_supplies') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        {{ dbt_utils.generate_surrogate_key(['id', 'sku']) }} as supply_uuid,\n        id as supply_id,\n        sku as product_id,\n\n        ---------- text\n        name as supply_name,\n\n        ---------- numerics\n        {{ cents_to_dollars('cost') }} as supply_cost,\n\n        ---------- booleans\n        perishable as is_perishable_supply\n\n    from source\n\n)\n\nselect * from renamed\n"
-    },
-    "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\orchestrator.py": {
-      "id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\orchestrator.py",
-      "source_datasets": [],
       "target_datasets": [
-        "dynamic_reference"
+        "stg_supplies"
       ],
-      "transformation_type": "python_dataflow",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\orchestrator.py",
+      "transformation_type": "dbt",
+      "source_file": "models/staging/stg_supplies.sql",
       "line_range": [
         0,
         0
       ],
-      "sql_query_if_applicable": null
+      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_supplies') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        {{ dbt_utils.generate_surrogate_key(['id', 'sku']) }} as supply_uuid,\n        id as supply_id,\n        sku as product_id,\n\n        ---------- text\n        name as supply_name,\n\n        ---------- numerics\n        {{ cents_to_dollars('cost') }} as supply_cost,\n\n        ---------- booleans\n        perishable as is_perishable_supply\n\n    from source\n\n)\n\nselect * from renamed\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
     },
-    "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\agents\\archivist.py": {
-      "id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\agents\\archivist.py",
-      "source_datasets": [],
-      "target_datasets": [
-        "dynamic_reference"
+    "dbt::models/staging/stg_products.sql": {
+      "name": null,
+      "id": "dbt::models/staging/stg_products.sql",
+      "framework": "dbt",
+      "source_datasets": [
+        "ecom.raw_products"
       ],
-      "transformation_type": "python_dataflow",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\agents\\archivist.py",
+      "target_datasets": [
+        "stg_products"
+      ],
+      "transformation_type": "dbt",
+      "source_file": "models/staging/stg_products.sql",
       "line_range": [
         0,
         0
       ],
-      "sql_query_if_applicable": null
-    },
-    "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_analyzers.py": {
-      "id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_analyzers.py",
-      "source_datasets": [],
-      "target_datasets": [
-        "def run():\\n    pass",
-        "import os\\n\\ndef my_func():\\n    pass\\n\\nclass MyClass(Base):\\n    pass"
-      ],
-      "transformation_type": "python_dataflow",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_analyzers.py",
-      "line_range": [
-        0,
-        0
-      ],
-      "sql_query_if_applicable": null
-    },
-    "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py": {
-      "id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py",
-      "source_datasets": [],
-      "target_datasets": [
-        "\nCREATE TABLE analytics.revenue AS SELECT * FROM raw.payments\n",
-        "\nextract >> transform >> load\n",
-        "\nimport pandas as pd\ndf = pd.read_sql(\"SELECT * FROM analytics.revenue\", con=None)\ndf.to_csv(\"s3://bucket/export.csv\")\n",
-        "dynamic_reference"
-      ],
-      "transformation_type": "python_dataflow",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py",
-      "line_range": [
-        0,
-        0
-      ],
-      "sql_query_if_applicable": null
-    },
-    "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py": {
-      "id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
-      "source_datasets": [],
-      "target_datasets": [
-        "# hello",
-        "class User: pass",
-        "config",
-        "def helper(): pass",
-        "dynamic_reference",
-        "from .user import User",
-        "import utils\\nimport models.user\\n\\ndef main(): pass"
-      ],
-      "transformation_type": "python_dataflow",
-      "source_file": "C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
-      "line_range": [
-        0,
-        0
-      ],
-      "sql_query_if_applicable": null
+      "sql_query_if_applicable": "with\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_products') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        sku as product_id,\n\n        ---------- text\n        name as product_name,\n        type as product_type,\n        description as product_description,\n\n\n        ---------- numerics\n        {{ cents_to_dollars('price') }} as product_price,\n\n        ---------- booleans\n        coalesce(type = 'jaffle', false) as is_food_item,\n\n        coalesce(type = 'beverage', false) as is_drink_item\n\n    from source\n\n)\n\nselect * from renamed\n",
+      "metadata": {},
+      "confidence_score": 1.0,
+      "dynamic_reference": false,
+      "requires_runtime_context": false,
+      "via_sql": false,
+      "confidence": 1.0,
+      "analysis_method": null
     }
   },
   "produces_edges": [
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\orchestrator.py",
-      "dataset_name": "dynamic_reference"
+      "transformation_id": "dbt::_repos/jaffle-shop/models/marts/customers.yml::customers",
+      "dataset_name": "customers",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\src\\agents\\archivist.py",
-      "dataset_name": "dynamic_reference"
+      "transformation_id": "dbt::models/marts/customers.sql",
+      "dataset_name": "customers",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_analyzers.py",
-      "dataset_name": "def run():\\n    pass"
+      "transformation_id": "dbt::models/marts/locations.sql",
+      "dataset_name": "locations",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_analyzers.py",
-      "dataset_name": "import os\\n\\ndef my_func():\\n    pass\\n\\nclass MyClass(Base):\\n    pass"
+      "transformation_id": "dbt::_repos/jaffle-shop/models/marts/orders.yml::orders",
+      "dataset_name": "orders",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py",
-      "dataset_name": "\nCREATE TABLE analytics.revenue AS SELECT * FROM raw.payments\n"
+      "transformation_id": "dbt::models/marts/metricflow_time_spine.sql",
+      "dataset_name": "metricflow_time_spine",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py",
-      "dataset_name": "\nextract >> transform >> load\n"
+      "transformation_id": "dbt::models/marts/orders.sql",
+      "dataset_name": "orders",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py",
-      "dataset_name": "\nimport pandas as pd\ndf = pd.read_sql(\"SELECT * FROM analytics.revenue\", con=None)\ndf.to_csv(\"s3://bucket/export.csv\")\n"
+      "transformation_id": "dbt::models/marts/order_items.sql",
+      "dataset_name": "order_items",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_hydrologist.py",
-      "dataset_name": "dynamic_reference"
+      "transformation_id": "dbt::_repos/jaffle-shop/models/marts/order_items.yml::order_items",
+      "dataset_name": "order_items",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
-      "dataset_name": "# hello"
+      "transformation_id": "dbt::models/marts/supplies.sql",
+      "dataset_name": "supplies",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
-      "dataset_name": "class User: pass"
+      "transformation_id": "dbt::models/marts/products.sql",
+      "dataset_name": "products",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
-      "dataset_name": "config"
+      "transformation_id": "dbt::_repos/jaffle-shop/models/staging/stg_customers.yml::stg_customers",
+      "dataset_name": "stg_customers",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
-      "dataset_name": "def helper(): pass"
+      "transformation_id": "dbt::_repos/jaffle-shop/models/staging/stg_locations.yml::stg_locations",
+      "dataset_name": "stg_locations",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
-      "dataset_name": "dynamic_reference"
+      "transformation_id": "dbt::models/staging/stg_customers.sql",
+      "dataset_name": "stg_customers",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
-      "dataset_name": "from .user import User"
+      "transformation_id": "dbt::models/staging/stg_locations.sql",
+      "dataset_name": "stg_locations",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "python::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\tests\\test_surveyor.py",
-      "dataset_name": "import utils\\nimport models.user\\n\\ndef main(): pass"
+      "transformation_id": "dbt::_repos/jaffle-shop/models/staging/stg_orders.yml::stg_orders",
+      "dataset_name": "stg_orders",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
+    },
+    {
+      "transformation_id": "dbt::_repos/jaffle-shop/models/staging/stg_order_items.yml::stg_order_items",
+      "dataset_name": "stg_order_items",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
+    },
+    {
+      "transformation_id": "dbt::_repos/jaffle-shop/models/staging/stg_products.yml::stg_products",
+      "dataset_name": "stg_products",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
+    },
+    {
+      "transformation_id": "dbt::models/staging/stg_orders.sql",
+      "dataset_name": "stg_orders",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
+    },
+    {
+      "transformation_id": "dbt::_repos/jaffle-shop/models/staging/stg_supplies.yml::stg_supplies",
+      "dataset_name": "stg_supplies",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
+    },
+    {
+      "transformation_id": "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_customers",
+      "dataset_name": "ecom.raw_customers",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
+    },
+    {
+      "transformation_id": "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_orders",
+      "dataset_name": "ecom.raw_orders",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
+    },
+    {
+      "transformation_id": "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_items",
+      "dataset_name": "ecom.raw_items",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
+    },
+    {
+      "transformation_id": "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_stores",
+      "dataset_name": "ecom.raw_stores",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
+    },
+    {
+      "transformation_id": "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_products",
+      "dataset_name": "ecom.raw_products",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
+    },
+    {
+      "transformation_id": "dbt_source::_repos/jaffle-shop/models/staging/__sources.yml::ecom.raw_supplies",
+      "dataset_name": "ecom.raw_supplies",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
+    },
+    {
+      "transformation_id": "dbt::models/staging/stg_order_items.sql",
+      "dataset_name": "stg_order_items",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
+    },
+    {
+      "transformation_id": "dbt::models/staging/stg_supplies.sql",
+      "dataset_name": "stg_supplies",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
+    },
+    {
+      "transformation_id": "dbt::models/staging/stg_products.sql",
+      "dataset_name": "stg_products",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     }
   ],
   "consumes_edges": [
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\customers.sql",
-      "dataset_name": "stg_customers"
+      "transformation_id": "dbt::models/marts/customers.sql",
+      "dataset_name": "stg_customers",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\locations.sql",
-      "dataset_name": "stg_locations"
+      "transformation_id": "dbt::models/marts/locations.sql",
+      "dataset_name": "stg_locations",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\orders.sql",
-      "dataset_name": "stg_orders"
+      "transformation_id": "dbt::models/marts/orders.sql",
+      "dataset_name": "stg_orders",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql",
-      "dataset_name": "stg_order_items"
+      "transformation_id": "dbt::models/marts/order_items.sql",
+      "dataset_name": "stg_orders",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql",
-      "dataset_name": "stg_orders"
+      "transformation_id": "dbt::models/marts/order_items.sql",
+      "dataset_name": "stg_order_items",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql",
-      "dataset_name": "stg_products"
+      "transformation_id": "dbt::models/marts/order_items.sql",
+      "dataset_name": "stg_products",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\order_items.sql",
-      "dataset_name": "stg_supplies"
+      "transformation_id": "dbt::models/marts/products.sql",
+      "dataset_name": "stg_products",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\products.sql",
-      "dataset_name": "stg_products"
+      "transformation_id": "dbt::models/marts/order_items.sql",
+      "dataset_name": "stg_supplies",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\marts\\supplies.sql",
-      "dataset_name": "stg_supplies"
+      "transformation_id": "dbt::models/marts/supplies.sql",
+      "dataset_name": "stg_supplies",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_customers.sql",
-      "dataset_name": "ecom.raw_customers"
+      "transformation_id": "dbt::models/staging/stg_customers.sql",
+      "dataset_name": "ecom.raw_customers",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_locations.sql",
-      "dataset_name": "ecom.raw_stores"
+      "transformation_id": "dbt::models/staging/stg_locations.sql",
+      "dataset_name": "ecom.raw_stores",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_orders.sql",
-      "dataset_name": "ecom.raw_orders"
+      "transformation_id": "dbt::models/staging/stg_orders.sql",
+      "dataset_name": "ecom.raw_orders",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_order_items.sql",
-      "dataset_name": "ecom.raw_items"
+      "transformation_id": "dbt::models/staging/stg_order_items.sql",
+      "dataset_name": "ecom.raw_items",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_products.sql",
-      "dataset_name": "ecom.raw_products"
+      "transformation_id": "dbt::models/staging/stg_products.sql",
+      "dataset_name": "ecom.raw_products",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     },
     {
-      "transformation_id": "sql::C:\\Users\\THINKPAD\\Desktop\\10_Academy_AI\\Week_4\\The_Brownfield_Cartographer\\_repos\\jaffle-shop\\models\\staging\\stg_supplies.sql",
-      "dataset_name": "ecom.raw_supplies"
+      "transformation_id": "dbt::models/staging/stg_supplies.sql",
+      "dataset_name": "ecom.raw_supplies",
+      "source_file": null,
+      "line_range": null,
+      "confidence": 1.0
     }
   ],
   "configures_edges": [],
-  "source_datasets": [
-    "stg_customers",
-    "stg_locations",
-    "stg_orders",
-    "stg_order_items",
-    "stg_products",
-    "stg_supplies",
-    "ecom.raw_customers",
-    "ecom.raw_stores",
-    "ecom.raw_orders",
-    "ecom.raw_items",
-    "ecom.raw_products",
-    "ecom.raw_supplies"
-  ],
+  "source_datasets": [],
   "sink_datasets": [
-    "dynamic_reference",
-    "def run():\\n    pass",
-    "import os\\n\\ndef my_func():\\n    pass\\n\\nclass MyClass(Base):\\n    pass",
-    "\nCREATE TABLE analytics.revenue AS SELECT * FROM raw.payments\n",
-    "\nextract >> transform >> load\n",
-    "\nimport pandas as pd\ndf = pd.read_sql(\"SELECT * FROM analytics.revenue\", con=None)\ndf.to_csv(\"s3://bucket/export.csv\")\n",
-    "# hello",
-    "class User: pass",
-    "config",
-    "def helper(): pass",
-    "from .user import User",
-    "import utils\\nimport models.user\\n\\ndef main(): pass"
-  ]
+    "customers",
+    "locations",
+    "orders",
+    "metricflow_time_spine",
+    "order_items",
+    "supplies",
+    "products"
+  ],
+  "implements_edges": [],
+  "pipeline_paths": []
 }

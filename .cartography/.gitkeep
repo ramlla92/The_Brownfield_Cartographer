@@ -1,4 +1,0 @@
-# This directory stores Cartographer output artifacts.
-# It is gitignored by default — commit selectively.
-# Generated files: CODEBASE.md, onboarding_brief.md, module_graph.json,
-#                  lineage_graph.json, cartography_trace.jsonl
