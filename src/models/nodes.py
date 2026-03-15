@@ -54,11 +54,14 @@ class ModuleNode(BaseModel):
     comment_ratio: float = 0.0
     docstring_drift_flag: bool = False
 
-    # Phase 4 Enhancements
+    # Phase 4 & 7 Enhancements
     import_count: int = 0
     dependent_modules: int = 0
     confidence: float = 1.0
     deep_audit_required: bool = False
+    max_complexity: float = 0.0
+    topological_layer: Optional[int] = None
+    parsing_error: Optional[str] = None
 
 
 class DatasetNode(BaseModel):
