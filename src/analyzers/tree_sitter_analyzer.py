@@ -40,8 +40,21 @@ class LanguageRouter:
             ".cjs": "javascript",
             ".ts": "typescript",
             ".tsx": "typescript",
+            ".ipynb": "notebook",
         }
-        return mapping.get(ext, "unknown")
+        lang = mapping.get(ext, "unknown")
+        if lang == "unknown" and path.is_file():
+            # Try shebang detection
+            try:
+                with open(path, "rb") as f:
+                    first_line = f.readline().decode("utf-8", errors="replace")
+                    if first_line.startswith("#!"):
+                        if "python" in first_line: return "python"
+                        if "bash" in first_line or "sh " in first_line: return "bash"
+                        if "node" in first_line: return "javascript"
+            except Exception:
+                pass
+        return lang
 
 
 class TreeSitterAnalyzer:
@@ -127,8 +140,13 @@ class TreeSitterAnalyzer:
 
         # 3. Read & Hash for Caching
         try:
-            # Read as bytes for safe handling
             source_bytes = path.read_bytes()
+            
+            # Special handling for Notebooks: extract code cells
+            if lang_name == "notebook":
+                source_bytes = self.extract_notebook_code(source_bytes)
+                lang_name = "python" # Analyze as Python
+
             content_hash = hashlib.md5(source_bytes).hexdigest()
             cache_key = f"{path}:{content_hash}"
             
@@ -136,7 +154,7 @@ class TreeSitterAnalyzer:
                 if cache_key in self._parse_cache:
                     return self._parse_cache[cache_key]
         except Exception as exc:
-            logger.error(f"Error reading file {path}: {exc}")
+            logger.error(f"Error reading/preparing file {path}: {exc}")
             return None
 
         # 4. Parse
@@ -439,10 +457,77 @@ class TreeSitterAnalyzer:
                 
         return sorted(classes), bases_map
 
+    def extract_notebook_code(self, source_bytes: bytes) -> bytes:
+        """Extracts code cells from a .ipynb JSON buffer and joins them."""
+        try:
+            import json
+            data = json.loads(source_bytes.decode("utf-8"))
+            code_cells = []
+            for cell in data.get("cells", []):
+                if cell.get("cell_type") == "code":
+                    source = cell.get("source", [])
+                    if isinstance(source, list):
+                        code_cells.append("".join(source))
+                    else:
+                        code_cells.append(source)
+            return "\n".join(code_cells).encode("utf-8")
+        except Exception as exc:
+            logger.warning(f"Failed to extract notebook code: {exc}")
+            return b""
+
+    def compute_complexity(self, node: Node) -> int:
+        """
+        Computes cyclomatic complexity for a given node (usually a function).
+        CC = E - N + 2P, but we use the simpler: 1 + number of decision points.
+        """
+        # Decision points in Python: if, elif, while, for, except, with, and, or
+        decision_points = {
+            "if_statement", "elif_clause", "while_statement", "for_statement",
+            "except_clause", "with_statement", "boolean_operator"
+        }
+        
+        count = 0
+        for n in self.walk_tree(node):
+            if n.type in decision_points:
+                count += 1
+            # Special case for boolean_operator: count its children that are actually operators (and/or)
+            elif n.type == "boolean_operator":
+                # Tree-sitter boolean_operator contains 'and' / 'or' as children
+                pass # Already counted via type matching in some grammars, but let's be safe
+        
+        return 1 + count
+
+    def compute_code_metrics(self, source_bytes: bytes) -> dict:
+        """
+        Computes line counts and comment ratio.
+        """
+        try:
+            lines = source_bytes.decode("utf-8").splitlines()
+            total_lines = len(lines)
+            if total_lines == 0:
+                return {"loc": 0, "comment_ratio": 0.0}
+            
+            comment_lines = 0
+            for line in lines:
+                trimmed = line.strip()
+                if trimmed.startswith("#") or trimmed.startswith("//") or trimmed.startswith("--"):
+                    comment_lines += 1
+                elif '"""' in trimmed or "'''" in trimmed:
+                    # Very simple multi-line comment approximation
+                    comment_lines += 1
+            
+            return {
+                "loc": total_lines,
+                "comment_ratio": round(comment_lines / total_lines, 2)
+            }
+        except Exception:
+            return {"loc": 0, "comment_ratio": 0.0}
+
 
 def analyze_module(path: Path, repo_root: Path) -> Optional[ModuleNode]:
     """
     Main entry point for module analysis.
+    Now includes complexity, LOC, and comment ratio.
     """
     from src.models.nodes import Language
     analyzer = TreeSitterAnalyzer()
@@ -452,7 +537,7 @@ def analyze_module(path: Path, repo_root: Path) -> Optional[ModuleNode]:
     
     # Map string to Language enum
     lang_enum = Language.UNKNOWN
-    if lang_name == "python": lang_enum = Language.PYTHON
+    if lang_name == "python" or lang_name == "notebook": lang_enum = Language.PYTHON
     elif lang_name == "sql": lang_enum = Language.SQL
     elif lang_name == "yaml": lang_enum = Language.YAML
     elif lang_name == "javascript": lang_enum = Language.JAVASCRIPT
@@ -461,13 +546,29 @@ def analyze_module(path: Path, repo_root: Path) -> Optional[ModuleNode]:
     node = ModuleNode(path=rel_path, language=lang_enum)
     node.analysis_method = "tree_sitter"
     
-    if lang_name == "python":
-        try:
+    try:
+        # Size Check
+        if path.stat().st_size > analyzer.MAX_FILE_SIZE:
+            logger.warning(f"Skipping large module: {rel_path} ({path.stat().st_size} bytes)")
+            node.confidence = 0.0
+            return node
+
+        logger.debug(f"Analyzing module: {rel_path}")
+        
+        # Basic Metrics (LOC, Comment Ratio)
+        source_bytes = path.read_bytes()
+        if lang_name == "notebook":
+            source_bytes = analyzer.extract_notebook_code(source_bytes)
+        
+        metrics = analyzer.compute_code_metrics(source_bytes)
+        node.lines_of_code = metrics["loc"]
+        node.comment_ratio = metrics["comment_ratio"]
+        
+        if lang_name in ("python", "notebook"):
             result = analyzer.parse_file(path)
             if result:
+                # Imports
                 raw_imports = analyzer.extract_python_imports(result.root_node, result.source_bytes)
-                
-                # RESOLVE IMPORTS
                 resolved_imports = set()
                 for imp in raw_imports:
                     resolved = analyzer.resolve_import_path(imp, path, repo_root)
@@ -475,24 +576,41 @@ def analyze_module(path: Path, repo_root: Path) -> Optional[ModuleNode]:
                         resolved_imports.add(resolved)
                 node.imports = sorted(list(resolved_imports))
                 
+                # Functions and Classes
                 node.public_functions = analyzer.extract_python_functions(result.root_node, result.source_bytes)
                 node.classes, node.bases = analyzer.extract_python_classes(result.root_node, result.source_bytes)
+                
+                # Complexity (average across functions)
+                func_complexities = []
+                # Simple query to find all functions
+                query = "(function_definition) @func"
+                matches = analyzer.run_query("python", result.root_node, query)
+                for m in matches:
+                    for n in m.values():
+                        func_complexities.append(analyzer.compute_complexity(n))
+                
+                if func_complexities:
+                    node.complexity_score = round(sum(func_complexities) / len(func_complexities), 2)
+                    node.max_complexity = float(max(func_complexities))
+                else:
+                    node.complexity_score = 1.0 # Minimum CC
+                    node.max_complexity = 1.0
+                    
                 node.confidence = 1.0
-        except Exception as exc:
-            logger.error(f"Error analyzing Python module {rel_path}: {exc}")
-            node.confidence = 0.5
-    elif lang_name == "sql":
-        from src.analyzers.sql_lineage import SQLLineageAnalyzer
-        analyzer_sql = SQLLineageAnalyzer(repo_root=repo_root)
-        transformation = analyzer_sql.analyze(path)
-        if transformation:
-            # For SQL files, we treat source/target datasets as "imports" for the module graph
-            # so that edges are created between the SQL file and the tables it affects.
-            node.imports = sorted(list(set(transformation.source_datasets + transformation.target_datasets)))
-            node.analysis_method = "sqlglot"
-            node.confidence = 0.9
-        else:
-            node.analysis_method = "heuristic"
-            node.confidence = 0.1
+        elif lang_name == "sql":
+            from src.analyzers.sql_lineage import SQLLineageAnalyzer
+            analyzer_sql = SQLLineageAnalyzer(repo_root=repo_root)
+            transformation = analyzer_sql.analyze(path)
+            if transformation:
+                node.imports = sorted(list(set(transformation.source_datasets + transformation.target_datasets)))
+                node.analysis_method = "sqlglot"
+                node.confidence = 0.9
+            else:
+                node.analysis_method = "heuristic"
+                node.confidence = 0.1
+    except Exception as exc:
+        logger.error(f"Error analyzing module {rel_path}: {exc}")
+        node.confidence = 0.5
+        node.parsing_error = str(exc)
     
     return node

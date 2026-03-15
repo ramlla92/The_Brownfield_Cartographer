@@ -70,16 +70,23 @@ class SQLLineageAnalyzer:
         try:
             rel_source_file = str(abs_sql_path.relative_to(self.repo_root)).replace("\\", "/")
         except ValueError:
-            # Fallback if path is outside repo for some reason
             rel_source_file = str(sql_path)
 
+        # dbt specific: if in models/, the filename is a target dataset
+        is_dbt = "models/" in rel_source_file
+        if is_dbt:
+            model_name = sql_path.stem
+            if model_name not in targets_resolved:
+                targets_resolved.append(model_name)
+
         return TransformationNode(
-            id=f"sql::{rel_source_file}",
+            id=f"dbt::{rel_source_file}" if is_dbt else f"sql::{rel_source_file}",
             source_datasets=sorted(list(set(sources_resolved))),
             target_datasets=sorted(list(set(targets_resolved))),
-            transformation_type="sql",
+            transformation_type="dbt" if is_dbt else "sql",
             source_file=rel_source_file,
             sql_query_if_applicable=source[:2000],
+            framework="dbt" if is_dbt else "sql",
         )
 
     def _cached_resolve(self, table_name: str) -> Optional[str]:
@@ -91,6 +98,11 @@ class SQLLineageAnalyzer:
         
         resolved = resolve_table_to_module(table_name, self.repo_root)
         
+        # dbt specific: for ref() or known models, we want the stem as the dataset name
+        # to ensure connectivity with target_datasets=[sql_path.stem]
+        if resolved and resolved.endswith(".sql"):
+            resolved = Path(resolved).stem
+
         with self._lock:
             self._resolution_cache[cache_key] = resolved
             
@@ -104,12 +116,27 @@ class SQLLineageAnalyzer:
             logger.info(f"[sql_lineage] Parsing query: {source}")
         
         # Handle dbt ref() and source() tags
+        # Find all ref('model') or ref("model")
+        refs = re.findall(r"\{\{\s*ref\(['\"]([\w_]+)['\"]\)\s*\}\}", source)
+        # Find all source('source', 'table')
+        sources_found = re.findall(r"\{\{\s*source\(['\"]([\w_]+)['\"]\s*,\s*['\"]([\w_]+)['\"]\)\s*\}\}", source)
+        
+        # Replace macros with identifiers so sqlglot can parse them
         processed_source = re.sub(r"\{\{\s*ref\(['\"]([\w_]+)['\"]\)\s*\}\}", r"\1", source)
         processed_source = re.sub(
             r"\{\{\s*source\(['\"]([\w_]+)['\"]\s*,\s*['\"]([\w_]+)['\"]\)\s*\}\}", 
             r"\1.\2", 
             processed_source
         )
+
+        sources: set[str] = set()
+        targets: set[str] = set()
+
+        # Add explicitly found refs (dbt specific)
+        for r in refs:
+            sources.add(r.lower())
+        for s, t in sources_found:
+            sources.add(f"source:{s}.{t}".lower())
 
         try:
             # Try to parse the first statement

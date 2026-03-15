@@ -73,13 +73,15 @@ class DAGConfigAnalyzer:
             flags["dynamic"] = True
             flags["requires_context"] = True
 
+        rel_schema = str(schema_path.relative_to(self.repo_root)).replace("\\", "/") if self.repo_root in schema_path.parents else str(schema_path)
+        
         return TransformationNode(
-            id=f"dbt::{schema_path}::{name}",
+            id=f"dbt::{rel_schema}::{name}",
             source_datasets=sorted(list(sources)),
             target_datasets=[name],
             transformation_type="dbt",
             transformation_name=name,
-            source_file=str(schema_path),
+            source_file=rel_schema,
             dynamic_reference=flags["dynamic"],
             requires_runtime_context=flags["requires_context"],
             metadata=model_data.get("meta", {})
@@ -97,13 +99,14 @@ class DAGConfigAnalyzer:
             desc = table.get("description", "")
             self._extract_refs_from_text(desc, sources)
             
+            rel_schema = str(schema_path.relative_to(self.repo_root)).replace("\\", "/") if self.repo_root in schema_path.parents else str(schema_path)
             nodes.append(TransformationNode(
-                id=f"dbt_source::{schema_path}::{name}",
+                id=f"dbt_source::{rel_schema}::{name}",
                 source_datasets=sorted(list(sources)),
                 target_datasets=[name],
                 transformation_type="dbt_source",
                 transformation_name=name,
-                source_file=str(schema_path),
+                source_file=rel_schema,
                 dynamic_reference="{{" in desc or "{%" in desc,
                 requires_runtime_context="{{" in desc or "{%" in desc,
                 metadata=table.get("meta", {})
